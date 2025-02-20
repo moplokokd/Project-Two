@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(852.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 500px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .header {
+            color: #ffffff;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: bold;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-input {
+            margin-bottom: 20px;
+        }
+
+        .flex {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .header-form {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 16px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .form {
+            padding: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .form:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .button {
+            background: rgba(100, 181, 246, 0.8);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 10px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .button:hover {
+            background: rgba(66, 165, 245, 0.9);
+        }
+
+        .message {
+            text-align: center;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .message.success {
+            background-color: rgba(200, 230, 201, 0.9);
+            color: #2e7d32;
+        }
+
+        .message.error {
+            background-color: rgba(255, 205, 210, 0.9);
+            color: #c62828;
+        }
+
+        a {
+            display: inline-block;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(4px);
+            background: rgba(92, 107, 192, 0.2);
+        }
+
+        a:hover {
+            background: rgba(92, 107, 192, 0.4);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Animation for form inputs */
+        .form-input {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-input:nth-child(1) { animation-delay: 0.1s; }
+        .form-input:nth-child(2) { animation-delay: 0.2s; }
+        .form-input:nth-child(3) { animation-delay: 0.3s; }
+        .form-input:nth-child(4) { animation-delay: 0.4s; }
+        .form-input:nth-child(5) { animation-delay: 0.5s; }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header form-input">Registration Form</div>
+        <div class="flex form-input">
+            <div class="header-form">Brandname</div>
+            <input class="form" name="Brandname" type="text" />
+        </div>
+        <div class="flex form-input">
+            <div class="header-form">Explanation</div>
+            <input class="form" name="Explanation" type="text" />
+        </div>
+        <div class="flex form-input">
+            <div class="header-form">Price</div>
+            <input class="form" name="Price" type="text" />
+        </div>
+        <div class="flex form-input">
+            <div class="header-form">Size</div>
+            <input class="form" name="Size" type="text" />
+        </div>
+
+        <div class="form-input center">
+            <a href="./product.html">Home</a>
+        </div>
+        <div id="response-message" class="message"></div>
+        <div class="center">
+            <button onclick="submitData()" class="button">ส่งข้อมูล</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="index1.js"></script>
+</body>
+</html>
